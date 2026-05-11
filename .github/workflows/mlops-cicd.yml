@@ -10,6 +10,7 @@ env:
   PYTHON_VERSION: '3.10'
   DOCKER_IMAGE: churn-prediction-api
   CI: "true"
+  MLFLOW_TRACKING_URI: file:./mlruns
 
 jobs:
   # JOB 1: Test the code
