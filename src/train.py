@@ -91,7 +91,7 @@ with mlflow.start_run(run_name=RUN_NAME) as run:
         client.update_model_version(
             name=MODEL_NAME,
             version=registered_model.version,
-            description=f"Random Forest - Acc: {metrics['accuracy']:.3f}, F1: {metrics['f1_score']:.3f}",
+            description=f"Acc: {metrics['accuracy']:.3f}, F1: {metrics['f1_score']:.3f}",
         )
 
         # Transition to "Production" stage (optional but good)
