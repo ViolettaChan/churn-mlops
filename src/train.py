@@ -25,7 +25,9 @@ RUN_NAME = "random_forest_v1"
 # =========================
 # Use the MLflow server (not local file)
 if os.getenv("CI"):
-    mlflow.set_tracking_uri("file:./mlruns")
+    # Set MLflow to use a local directory for tracking
+    mlflow.set_tracking_uri("file:///tmp/mlruns")  # Use /tmp/ (writable in GitHub Actions)
+    os.makedirs("/tmp/mlruns", exist_ok=True)  # Ensure directory exists
 else:
     mlflow.set_tracking_uri("http://mlflow-server:5000")
 

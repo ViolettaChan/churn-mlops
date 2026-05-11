@@ -10,7 +10,6 @@ env:
   PYTHON_VERSION: '3.10'
   DOCKER_IMAGE: churn-prediction-api
   CI: "true"
-  MLFLOW_TRACKING_URI: file:./mlruns
 
 jobs:
   # JOB 1: Test the code
@@ -77,9 +76,6 @@ jobs:
         run: |
           pip install -r requirements.txt
       
-      - name: Prepare MLflow directory
-        run: mkdir -p mlruns
-      
       - name: Download data
         run: |
           mkdir -p data/raw
@@ -87,6 +83,7 @@ jobs:
       
       - name: Train model
         run: |
+          mkdir -p /tmp/mlruns  # Create the directory
           python src/train.py
       
       - name: Check model accuracy
