@@ -10,13 +10,6 @@ env:
   PYTHON_VERSION: '3.10'
   DOCKER_IMAGE: churn-prediction-api
 
-steps-common: &setup
-  - uses: actions/setup-python@v4
-    with:
-      python-version: 3.10
-  - run: pip install -r requirements.txt
-
-
 jobs:
   # JOB 1: Test the code
   test:
@@ -34,6 +27,7 @@ jobs:
       
       - name: Install dependencies
         run: |
+          pip install -r requirements.txt
           pip install pytest pytest-cov flake8 black isort
       
       - name: Auto-format code
@@ -76,6 +70,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
       
       - name: Download data
         run: |
