@@ -1,6 +1,6 @@
 # src/train.py - Complete version with registration
 import warnings
-
+import os
 import mlflow
 import mlflow.sklearn
 from mlflow.tracking import MlflowClient
@@ -24,7 +24,11 @@ RUN_NAME = "random_forest_v1"
 # Setup MLflow
 # =========================
 # Use the MLflow server (not local file)
-mlflow.set_tracking_uri("http://mlflow-server:5000")
+if os.getenv("CI"):
+    mlflow.set_tracking_uri("file:./mlruns")
+else:
+    mlflow.set_tracking_uri("http://mlflow-server:5000")
+
 mlflow.set_experiment(EXPERIMENT_NAME)
 
 # =========================
