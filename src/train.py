@@ -30,7 +30,7 @@ mlflow.set_experiment(EXPERIMENT_NAME)
 # =========================
 # Load and prepare data
 # =========================
-print("📊 Loading data...")
+print("Loading data...")
 X, y, _ = load_and_preprocess()
 
 # Split data
@@ -54,7 +54,7 @@ with mlflow.start_run(run_name=RUN_NAME) as run:
     }
 
     # Train
-    print("\n🤖 Training model...")
+    print("Training model...")
     model = RandomForestClassifier(**params)
     model.fit(X_train, y_train)
 
@@ -72,14 +72,14 @@ with mlflow.start_run(run_name=RUN_NAME) as run:
     mlflow.log_metrics(metrics)
     mlflow.sklearn.log_model(model, "model")
 
-    print("\n📊 Performance:")
+    print("\nPerformance:")
     for metric, value in metrics.items():
         print(f"  {metric}: {value:.3f}")
 
     # =========================
     # CRITICAL: REGISTER THE MODEL
     # =========================
-    print(f"\n📦 Registering model to MLflow Model Registry...")
+    print("Registering model to MLflow Model Registry...")
     model_uri = f"runs:/{run.info.run_id}/model"
 
     try:
@@ -100,17 +100,17 @@ with mlflow.start_run(run_name=RUN_NAME) as run:
         )
 
         print(
-            f"✅ Model registered as '{MODEL_NAME}' version {registered_model.version}"
+            f"Model registered as '{MODEL_NAME}' version {registered_model.version}"
         )
-        print(f"   Stage: Production")
+        print("Stage: Production")
 
     except Exception as e:
-        print(f"⚠️ Registration error: {e}")
-        print("   Model may already exist. Creating new version...")
+        print(f"Registration error: {e}")
+        print("Model may already exist. Creating new version...")
 
         # If model exists, it will create a new version automatically
         registered_model = mlflow.register_model(model_uri, MODEL_NAME)
-        print(f"✅ Created version {registered_model.version}")
+        print(f"Created version {registered_model.version}")
 
-print(f"\n✨ Done! Model registered in MLflow Model Registry")
+print("Done! Model registered in MLflow Model Registry")
 print(f"   View at: http://localhost:5000/#/models/{MODEL_NAME}")

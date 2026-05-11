@@ -47,9 +47,9 @@ def calculate_drift():
     num_drifted = sum(1 for col in drift_detected.values()
                       if col["drift_detected"])
 
-    print(f"📊 Drift Analysis Results:")
-    print(f"   Total features: {len(drift_detected)}")
-    print(f"   Features with drift: {num_drifted}")
+    print("Drift Analysis Results:")
+    print(f"Total features: {len(drift_detected)}")
+    print(f"Features with drift: {num_drifted}")
 
     # 7. Log to MLflow
     with mlflow.start_run(run_name="drift_monitoring"):
@@ -66,10 +66,10 @@ def calculate_drift():
 
     # 8. Alert if drift is severe
     if num_drifted > len(drift_detected) * 0.3:  # >30% features drifted
-        print("🚨 ALERT: Significant data drift detected! Consider retraining.")
+        print("ALERT: Significant data drift detected! Consider retraining.")
         return True
     else:
-        print("✅ No significant drift detected.")
+        print("No significant drift detected.")
         return False
 
 
