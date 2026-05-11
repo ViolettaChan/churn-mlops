@@ -1,0 +1,16 @@
+creation_timestamp: 1778158346888
+current_stage: None
+deployment_job_state: null
+description: 'Random Forest with 100 trees, 10 depth. Accuracy: 0.798'
+last_updated_timestamp: 1778158346897
+model_id: m-2ce201c822b2409b898115435122f535
+name: churn-prediction
+run_id: 17a4e006b3974c73abdba7d3965cff02
+run_link: null
+source: models:/m-2ce201c822b2409b898115435122f535
+status: READY
+status_message: null
+storage_location: file:///workspaces/churn-mlops/mlruns/753640554297280051/models/m-2ce201c822b2409b898115435122f535/artifacts
+user_id: null
+version: 1
+workspace: default

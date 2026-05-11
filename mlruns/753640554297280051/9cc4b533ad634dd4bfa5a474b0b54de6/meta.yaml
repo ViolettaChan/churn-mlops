@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/churn-mlops/mlruns/753640554297280051/9cc4b533ad634dd4bfa5a474b0b54de6/artifacts
+end_time: 1778180107531
+entry_point_name: ''
+experiment_id: '753640554297280051'
+lifecycle_stage: active
+run_id: 9cc4b533ad634dd4bfa5a474b0b54de6
+run_name: random_forest_base
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778180102450
+status: 3
+tags: []
+user_id: codespace

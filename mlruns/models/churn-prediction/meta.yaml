@@ -1,0 +1,9 @@
+aliases:
+  active: '1'
+creation_timestamp: 1778158346880
+deployment_job_id: null
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1778180118676
+name: churn-prediction
+workspace: default

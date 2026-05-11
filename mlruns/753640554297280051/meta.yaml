@@ -1,0 +1,8 @@
+artifact_location: file:///workspaces/churn-mlops/mlruns/753640554297280051
+creation_time: 1778158342496
+experiment_id: '753640554297280051'
+last_update_time: 1778158342496
+lifecycle_stage: active
+name: churn-prediction
+trace_location: null
+workspace: default

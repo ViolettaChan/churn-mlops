@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/churn-mlops/mlruns/0/ec32f441f4eb49c2b07ad90d59fb4985/artifacts
+end_time: 1778161806563
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ec32f441f4eb49c2b07ad90d59fb4985
+run_name: drift_monitoring
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778161806520
+status: 3
+tags: []
+user_id: codespace

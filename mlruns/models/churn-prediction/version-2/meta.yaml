@@ -1,0 +1,16 @@
+creation_timestamp: 1778180118676
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1778180118676
+model_id: m-1dc212997e1143d08b4b755e4e17e258
+name: churn-prediction
+run_id: 9cc4b533ad634dd4bfa5a474b0b54de6
+run_link: null
+source: models:/m-1dc212997e1143d08b4b755e4e17e258
+status: READY
+status_message: null
+storage_location: file:///workspaces/churn-mlops/mlruns/753640554297280051/models/m-1dc212997e1143d08b4b755e4e17e258/artifacts
+user_id: null
+version: 2
+workspace: default
