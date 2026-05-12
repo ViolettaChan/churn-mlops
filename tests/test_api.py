@@ -108,12 +108,12 @@ class TestAPI:
         assert "status" in data
         assert data["status"] == "reloading"
     
-    # def test_drift_monitor(self):
-    #     """Test drift monitoring endpoint"""
-    #     response = client.get("/monitor/drift")
-    #     assert response.status_code == 200
-    #     data = response.json()
+    def test_drift_monitor(self):
+        """Test drift monitoring endpoint"""
+        response = client.get("/monitor/drift")
+        assert response.status_code == 200
+        data = response.json()
         
-    #     assert "drift_detected" in data
-    #     assert "timestamp" in data
-    #     assert "message" in data
+        assert "drift_detected" in data
+        assert "timestamp" in data
+        assert "message" in data
